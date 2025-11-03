@@ -2,3 +2,4 @@ venv/
 files/
 20_AnalisisTextoClasificacionNoticias.ipynb
 MailClassify.ipynb
+__pycache__/

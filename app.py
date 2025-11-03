@@ -17,7 +17,9 @@ def predict(getData: EmailData):
     vectorizer = joblib.load( 'models/vectorizer.pkl') # Carga del vectorizador.
     X = vectorizer.transform([getData.subject])
     predRandom = model01C.predict(X)
-    return predRandom.tolist()
+    return {"label": str(predRandom.tolist()[0])}
+
+
 #uvicorn app:app --reload
 #python -m uvicorn app:app --reload --host 0.0.0.0 --port 8002 --app-dir "C:\Users\Juan Pablo\inspecciones_en_campo\src\data\models"
 #uvicorn app:app --reload --host 0.0.0.0 --port 8000
